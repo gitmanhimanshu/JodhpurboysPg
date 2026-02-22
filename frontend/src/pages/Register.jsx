@@ -100,16 +100,16 @@ function Register() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <div className="card">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800">Resident Registration</h2>
-            <p className="text-gray-600 mt-2">Fill in your details to create an account</p>
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Resident Registration</h2>
+            <p className="text-sm sm:text-base text-gray-600 mt-2">Fill in your details to create an account</p>
           </div>
           
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
                 <input 
@@ -147,7 +147,7 @@ function Register() {
               />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Password</label>
                 <div className="relative">
@@ -335,7 +335,7 @@ function Register() {
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-gray-600">
+            <p className="text-sm sm:text-base text-gray-600">
               Already have an account?{' '}
               <Link to="/login" className="text-blue-600 hover:text-blue-700 font-semibold">
                 Login here

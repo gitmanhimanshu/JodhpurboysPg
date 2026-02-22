@@ -32,25 +32,25 @@ function Home() {
             {/* Left Content */}
             <div className="text-white">
               <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-white/30">
-                Best PG in Jaipur
+                Premium PG in Jaipur
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Jaipur Boys PG
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                Jodhpur Boys PG
                 <span className="block text-yellow-300">& Tiffin Center</span>
               </h1>
               
               {/* Pricing Badge */}
-              <div className="inline-flex items-center gap-3 bg-white text-gray-900 px-6 py-4 rounded-xl mb-8 shadow-xl">
-                <span className="text-3xl font-bold">₹5,499</span>
-                <span className="text-gray-600">/month</span>
+              <div className="inline-flex items-center gap-2 sm:gap-3 bg-white text-gray-900 px-4 sm:px-6 py-3 sm:py-4 rounded-xl mb-6 sm:mb-8 shadow-xl">
+                <span className="text-2xl sm:text-3xl font-bold">₹5,499</span>
+                <span className="text-sm sm:text-base text-gray-600">/month</span>
               </div>
               
-              <p className="text-xl text-white/90 mb-8 leading-relaxed">
+              <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed">
                 Comfortable rooms, delicious home-cooked food, and a friendly community for students and professionals.
               </p>
 
               {/* Features */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
                 {[
                   'Fully Furnished Rooms',
                   'High-Speed WiFi',
@@ -66,11 +66,11 @@ function Home() {
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#contact" className="bg-white hover:bg-gray-100 text-orange-600 px-8 py-4 rounded-xl font-bold transition text-center shadow-lg">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a href="#contact" className="bg-white hover:bg-gray-100 text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold transition text-center shadow-lg text-sm sm:text-base">
                   Book Your Room
                 </a>
-                <a href="tel:+918107842564" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold transition text-center border-2 border-white/30">
+                <a href="tel:+918107842564" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold transition text-center border-2 border-white/30 text-sm sm:text-base">
                   Call Now
                 </a>
               </div>
@@ -78,15 +78,15 @@ function Home() {
 
             {/* Right Form */}
             <div id="contact">
-              <div className="bg-white rounded-2xl shadow-2xl p-8">
+              <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8">
                 <div className="mb-6">
-                  <span className="inline-block bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                  <span className="inline-block bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold mb-4">
                     Limited Rooms Available
                   </span>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                     Get in Touch
                   </h2>
-                  <p className="text-gray-600">We'll contact you within 24 hours</p>
+                  <p className="text-sm sm:text-base text-gray-600">We'll contact you within 24 hours</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -249,9 +249,9 @@ function Home() {
                   <rect x="22" y="28" width="5" height="8" fill="white" rx="1"/>
                   <circle cx="25" cy="32" r="0.5" fill="#F97316"/>
                 </svg>
-                <h3 className="text-xl font-bold text-orange-400">Jaipur Boys PG & Tiffin Center</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-orange-400">Jodhpur Boys PG & Tiffin Center</h3>
               </div>
-              <p className="text-gray-400">Your trusted home away from home in Jaipur.</p>
+              <p className="text-sm sm:text-base text-gray-400">Your trusted home away from home in Jaipur.</p>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Quick Links</h3>
@@ -273,7 +273,7 @@ function Home() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Jaipur Boys PG & Tiffin Center. All rights reserved.</p>
+            <p className="text-sm sm:text-base">&copy; 2024 Jodhpur Boys PG & Tiffin Center. All rights reserved.</p>
           </div>
         </div>
       </footer>

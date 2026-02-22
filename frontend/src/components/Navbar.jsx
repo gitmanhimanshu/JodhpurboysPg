@@ -34,8 +34,8 @@ function Navbar() {
               </svg>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-900">Jaipur Boys PG & Tiffin Center</span>
-              <span className="text-xs text-gray-500 -mt-1">Your Home Away From Home</span>
+              <span className="text-base sm:text-xl font-bold text-gray-900">Jodhpur Boys PG & Tiffin Center</span>
+              <span className="text-xs text-gray-500 -mt-1 hidden sm:block">Your Home Away From Home</span>
             </div>
           </Link>
           
