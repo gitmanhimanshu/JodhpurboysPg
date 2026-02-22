@@ -12,27 +12,11 @@ function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="relative">
-              {/* Professional Logo SVG */}
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Building/Home Shape */}
-                <rect x="8" y="16" width="24" height="20" fill="#F97316" rx="2"/>
-                <rect x="8" y="16" width="24" height="20" stroke="#EA580C" strokeWidth="1.5" rx="2"/>
-                
-                {/* Roof */}
-                <path d="M4 18L20 6L36 18" stroke="#EA580C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M4 18L20 6L36 18" fill="#F97316" fillOpacity="0.3"/>
-                
-                {/* Windows */}
-                <rect x="13" y="21" width="5" height="5" fill="white" rx="1"/>
-                <rect x="22" y="21" width="5" height="5" fill="white" rx="1"/>
-                <rect x="13" y="28" width="5" height="5" fill="white" rx="1"/>
-                
-                {/* Door */}
-                <rect x="22" y="28" width="5" height="8" fill="white" rx="1"/>
-                <circle cx="25" cy="32" r="0.5" fill="#F97316"/>
-              </svg>
-            </div>
+            <img 
+              src="/logo.jpg" 
+              alt="Jodhpur Boys PG Logo" 
+              className="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-lg"
+            />
             <div className="flex flex-col">
               <span className="text-base sm:text-xl font-bold text-gray-900">Jodhpur Boys PG & Tiffin Center</span>
               <span className="text-xs text-gray-500 -mt-1 hidden sm:block">Your Home Away From Home</span>
