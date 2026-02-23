@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Navigate } from 'react-router-dom'
-import axios from 'axios'
-import { useAuth } from '../context/AuthContext'
+import { useAuth, axiosAuth } from '../context/AuthContext'
 
 function AdminPanel() {
   const { user, loading } = useAuth()
@@ -20,7 +19,7 @@ function AdminPanel() {
 
   const fetchLeads = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/leads/all/`)
+      const res = await axiosAuth.get(`${import.meta.env.VITE_API_URL}/leads/all/`)
       setLeads(res.data)
     } catch (err) {
       console.error(err)
@@ -29,7 +28,7 @@ function AdminPanel() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/users/all/`)
+      const res = await axiosAuth.get(`${import.meta.env.VITE_API_URL}/users/all/`)
       setUsers(res.data)
     } catch (err) {
       console.error(err)

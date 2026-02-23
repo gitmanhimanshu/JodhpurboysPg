@@ -1,7 +1,6 @@
-import { useAuth } from '../context/AuthContext'
+import { useAuth, axiosAuth } from '../context/AuthContext'
 import { Navigate } from 'react-router-dom'
 import { useState } from 'react'
-import axios from 'axios'
 
 function Dashboard() {
   const { user, loading, login } = useAuth()
@@ -45,7 +44,7 @@ function Dashboard() {
       const url = await uploadToCloudinary(file)
       
       // Update profile with new photo
-      const response = await axios.patch(
+      const response = await axiosAuth.patch(
         `${import.meta.env.VITE_API_URL}/users/profile/`,
         { photo_url: url }
       )
@@ -71,7 +70,7 @@ function Dashboard() {
       const url = await uploadToCloudinary(file)
       
       // Update profile with new aadhar photo
-      const response = await axios.patch(
+      const response = await axiosAuth.patch(
         `${import.meta.env.VITE_API_URL}/users/profile/`,
         { aadhar_photo_url: url }
       )

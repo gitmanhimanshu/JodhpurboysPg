@@ -5,6 +5,21 @@ const AuthContext = createContext()
 
 export const useAuth = () => useContext(AuthContext)
 
+// Create axios instance for authenticated requests
+export const axiosAuth = axios.create()
+
+// Add interceptor to axiosAuth only
+axiosAuth.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`
+    }
+    return config
+  },
+  (error) => Promise.reject(error)
+)
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -12,7 +27,6 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
       fetchUser()
     } else {
       setLoading(false)
@@ -21,11 +35,8 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_API_URL}/users/profile/`)
+      const res = await axiosAuth.get(`${import.meta.env.VITE_API_URL}/users/profile/`)
       const userData = res.data
-      
-      // Check if user is admin by comparing email with admin users from backend
-      // We'll add isAdmin flag based on backend response or check it separately
       setUser(userData)
     } catch (error) {
       localStorage.removeItem('token')
@@ -36,13 +47,11 @@ export const AuthProvider = ({ children }) => {
 
   const login = (token, userData) => {
     localStorage.setItem('token', token)
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
     setUser(userData)
   }
 
   const logout = () => {
     localStorage.removeItem('token')
-    delete axios.defaults.headers.common['Authorization']
     setUser(null)
   }
 
