@@ -1,6 +1,10 @@
 from pathlib import Path
 from decouple import config, Csv
 from datetime import timedelta
+import os
+
+# Disable ChromaDB telemetry
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,6 +24,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'users.apps.UsersConfig',
     'leads.apps.LeadsConfig',
+    'ai_assistant.apps.AiAssistantConfig',
 ]
 
 MIDDLEWARE = [

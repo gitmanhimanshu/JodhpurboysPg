@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
+import AIChat from '../components/AIChat'
 
 function Home() {
   const [formData, setFormData] = useState({ name: '', mobile: '' })
@@ -25,6 +26,9 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* AI Chat Assistant */}
+      <AIChat />
+      
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-orange-500 via-red-500 to-pink-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
