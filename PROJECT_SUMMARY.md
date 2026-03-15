@@ -1,7 +1,7 @@
-# Project Summary - Jodhpur Boys PG Management System
+# Project Summary - Marvar Boys PG Management System
 
 ## Overview
-A full-stack web application for managing PG (Paying Guest) accommodations in Jodhpur, featuring lead management, user registration, authentication, and an admin panel.
+A full-stack web application for managing PG (Paying Guest) accommodations in Jaipur, featuring lead management, user registration, authentication, and an admin panel.
 
 ---
 
@@ -261,7 +261,7 @@ VITE_API_URL - Backend API URL
 ## File Structure
 
 ```
-jodhpur-boys-pg/
+marvar-boys-pg/
 ├── backend/
 │   ├── config/              # Django project settings
 │   ├── users/               # User app (auth, profile)
