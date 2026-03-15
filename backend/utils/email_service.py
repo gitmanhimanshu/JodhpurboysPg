@@ -29,7 +29,7 @@ def send_email_via_brevo(to_email, subject, html_content, to_name=None):
             return False, "Email service not configured"
         
         # Get sender email from DEFAULT_FROM_EMAIL
-        from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'noreply@jodhpurpg.com')
+        from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'noreply@marvarpg.com')
         
         # Prepare headers
         headers = {
@@ -41,7 +41,7 @@ def send_email_via_brevo(to_email, subject, html_content, to_name=None):
         # Prepare email payload
         payload = {
             "sender": {
-                "name": "Jodhpur Boys PG",
+                "name": "Marvar Boys PG",
                 "email": from_email
             },
             "to": [{"email": to_email, "name": to_name or "User"}],
@@ -97,11 +97,11 @@ def send_otp_email(to_email, otp, user_name=None):
     <body>
         <div class="container">
             <div class="header">
-                <h1>Jodhpur Boys PG</h1>
+                <h1>Marvar Boys PG</h1>
             </div>
             <div class="content">
                 <h2>Hello {name},</h2>
-                <p>You requested to reset your password for your Jodhpur Boys PG account.</p>
+                <p>You requested to reset your password for your Marvar Boys PG account.</p>
                 <p>Your One-Time Password (OTP) is:</p>
                 <div class="otp-box">
                     <div class="otp-code">{otp}</div>

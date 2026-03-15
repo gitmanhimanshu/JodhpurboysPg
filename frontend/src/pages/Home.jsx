@@ -1,6 +1,71 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import AIChat from '../components/AIChat'
+import MenuSection from '../components/MenuSection'
+
+// Pricing Carousel Component
+function PricingCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  
+  const pricingOptions = [
+    { type: 'Starting From', price: '₹4999', period: '/month', color: 'from-green-500 to-emerald-500' },
+    { type: '3-Seater Room', price: '₹5,499', period: '/month', color: 'from-blue-500 to-indigo-500' },
+    { type: '2-Seater Room', price: '₹5,999', period: '/month', color: 'from-purple-500 to-pink-500' },
+    { type: 'Single Room', price: '₹6,999', period: '/month', color: 'from-orange-500 to-red-500' }
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % pricingOptions.length)
+    }, 2000) // Auto-swipe every 2 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <div className="relative overflow-hidden rounded-xl shadow-xl">
+      <div 
+        className="flex transition-transform duration-500 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {pricingOptions.map((option, index) => (
+          <div
+            key={index}
+            className={`min-w-full bg-gradient-to-r ${option.color} text-white px-6 py-4 flex items-center justify-between`}
+          >
+            <div>
+              <p className="text-sm font-medium opacity-90">{option.type}</p>
+              <div className="flex items-baseline gap-1">
+                <span className="text-2xl sm:text-3xl font-bold">{option.price}</span>
+                <span className="text-sm opacity-80">{option.period}</span>
+              </div>
+            </div>
+            <div className="text-right">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Dots Indicator */}
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-1">
+        {pricingOptions.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex ? 'bg-white' : 'bg-white/50'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 function Home() {
   const [formData, setFormData] = useState({ name: '', mobile: '' })
@@ -39,14 +104,13 @@ function Home() {
                 Premium PG in Jaipur
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-                Jodhpur Boys PG
+                Marwar Boys PG
                 <span className="block text-yellow-300">& Tiffin Center</span>
               </h1>
               
-              {/* Pricing Badge */}
-              <div className="inline-flex items-center gap-2 sm:gap-3 bg-white text-gray-900 px-4 sm:px-6 py-3 sm:py-4 rounded-xl mb-6 sm:mb-8 shadow-xl">
-                <span className="text-2xl sm:text-3xl font-bold">₹5,499</span>
-                <span className="text-sm sm:text-base text-gray-600">/month</span>
+              {/* Pricing Carousel */}
+              <div className="mb-6 sm:mb-8">
+                <PricingCarousel />
               </div>
               
               <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed">
@@ -181,6 +245,9 @@ function Home() {
         </div>
       </div>
 
+      {/* Menu Section */}
+      <MenuSection />
+
       {/* Why Choose Us */}
       <div className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -244,10 +311,10 @@ function Home() {
                 {/* Logo */}
                 <img 
                   src="/logo.jpg" 
-                  alt="Jodhpur Boys PG Logo" 
+                  alt="Marwar Boys PG Logo" 
                   className="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-lg"
                 />
-                <h3 className="text-lg sm:text-xl font-bold text-orange-400">Jodhpur Boys PG & Tiffin Center</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-orange-400">Marvar Boys PG & Tiffin Center</h3>
               </div>
               <p className="text-sm sm:text-base text-gray-400">Your trusted home away from home in Jaipur.</p>
             </div>
@@ -271,7 +338,7 @@ function Home() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p className="text-sm sm:text-base">&copy; 2024 Jodhpur Boys PG & Tiffin Center. All rights reserved.</p>
+            <p className="text-sm sm:text-base">&copy; 2024 Marwar Boys PG & Tiffin Center. All rights reserved.</p>
           </div>
         </div>
       </footer>

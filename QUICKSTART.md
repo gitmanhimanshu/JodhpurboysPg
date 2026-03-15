@@ -1,4 +1,4 @@
-# Quick Start Guide - Jodhpur Boys PG
+# Quick Start Guide - Marvar Boys PG
 
 Get the application running in 5 minutes!
 
@@ -17,11 +17,11 @@ psql --version
 ## Step 1: Database Setup (2 minutes)
 ```bash
 # Create database
-createdb jodhpur_pg_db
+createdb marvar_pg_db
 
 # Or using psql
 psql -U postgres
-CREATE DATABASE jodhpur_pg_db;
+CREATE DATABASE marvar_pg_db;
 \q
 ```
 

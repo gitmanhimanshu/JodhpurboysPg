@@ -5,7 +5,7 @@ function AIChat() {
   const [messages, setMessages] = useState([
     {
       type: 'bot',
-      text: 'Hello! I\'m your PG assistant. Ask me anything about Jodhpur Boys PG & Tiffin Center - location, amenities, rules, pricing, or anything else!',
+      text: 'Hello! I\'m your PG assistant. Ask me anything about Marvar Boys PG & Tiffin Center - location, amenities, rules, pricing, or anything else!',
       timestamp: new Date()
     }
   ])
@@ -15,6 +15,16 @@ function AIChat() {
   const [showTooltip, setShowTooltip] = useState(false)
   const [tooltipText, setTooltipText] = useState('')
   const messagesEndRef = useRef(null)
+
+  // Function to clean markdown formatting from text
+  const cleanMarkdown = (text) => {
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '$1') // Remove **bold**
+      .replace(/\*(.*?)\*/g, '$1')     // Remove *italic*
+      .replace(/#{1,6}\s/g, '')       // Remove headers
+      .replace(/`(.*?)`/g, '$1')      // Remove code blocks
+      .trim()
+  }
 
   // Tooltip messages that rotate
   const tooltipMessages = [
@@ -72,7 +82,7 @@ function AIChat() {
 
       const botMessage = {
         type: 'bot',
-        text: res.data.answer,
+        text: cleanMarkdown(res.data.answer),
         timestamp: new Date(),
         hasLocation: res.data.answer.toLowerCase().includes('location') || 
                      res.data.answer.toLowerCase().includes('address') ||
@@ -155,7 +165,7 @@ function AIChat() {
               </svg>
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-bold text-base sm:text-lg truncate">PG Assistant</h3>
+              <h3 className="font-bold text-base sm:text-lg truncate">Ishwar</h3>
               <p className="text-xs text-white/80 truncate">Ask me anything!</p>
             </div>
             {/* Close button for mobile */}

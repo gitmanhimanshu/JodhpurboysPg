@@ -14,11 +14,11 @@ function Navbar() {
           <Link to="/" className="flex items-center space-x-3">
             <img 
               src="/logo.jpg" 
-              alt="Jodhpur Boys PG Logo" 
+              alt="Marvar Boys PG Logo" 
               className="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-lg"
             />
             <div className="flex flex-col">
-              <span className="text-base sm:text-xl font-bold text-gray-900">Jodhpur Boys PG & Tiffin Center</span>
+              <span className="text-base sm:text-xl font-bold text-gray-900">Marwar Boys PG & Tiffin Center</span>
               <span className="text-xs text-gray-500 -mt-1 hidden sm:block">Your Home Away From Home</span>
             </div>
           </Link>
@@ -28,6 +28,9 @@ function Navbar() {
             <Link to="/" className="text-gray-700 hover:text-orange-600 transition duration-200 font-medium">
               Home
             </Link>
+            <a href="#menu" className="text-gray-700 hover:text-orange-600 transition duration-200 font-medium">
+              Menu
+            </a>
             <Link to="/services" className="text-gray-700 hover:text-orange-600 transition duration-200 font-medium">
               Services
             </Link>
@@ -83,6 +86,13 @@ function Navbar() {
             >
               Home
             </Link>
+            <a 
+              href="#menu" 
+              onClick={() => setIsOpen(false)}
+              className="block text-gray-700 hover:bg-orange-50 px-4 py-2 rounded-lg transition duration-200"
+            >
+              Menu
+            </a>
             <Link 
               to="/services" 
               onClick={() => setIsOpen(false)}

@@ -24,8 +24,12 @@ class AIAssistant:
         
         # Create prompt template
         self.prompt = ChatPromptTemplate.from_template("""
-Answer the question based on the provided context about Jodhpur Boys PG & Tiffin Center.
+Answer the question based on the provided context about Marvar Boys PG & Tiffin Center.
 If the question is about location or address, make sure to mention that user can view it on Google Maps.
+If asked about the owner, mention that the owner is Ishwar Jaat.
+If asked about menu or food, provide detailed information about daily meals and weekly menu in a clean, readable format without using markdown formatting like ** or *.
+
+IMPORTANT: Do not use any markdown formatting (**, *, etc.) in your response. Provide clean, plain text answers.
 
 Context: {context}
 

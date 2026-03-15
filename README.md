@@ -1,6 +1,6 @@
-# Jodhpur Boys PG Management System
+# Marvar Boys PG Management System
 
-A comprehensive web application for managing PG (Paying Guest) accommodations in Jodhpur. Built with modern technologies and featuring a beautiful, responsive UI.
+A comprehensive web application for managing PG (Paying Guest) accommodations in Jaipur. Built with modern technologies and featuring a beautiful, responsive UI.
 
 ## 🚀 Tech Stack
 
@@ -58,7 +58,7 @@ A comprehensive web application for managing PG (Paying Guest) accommodations in
 ### 1. Clone the Repository
 ```bash
 git clone <repository-url>
-cd jodhpur-boys-pg
+cd marvar-boys-pg
 ```
 
 ### 2. Backend Setup
@@ -85,7 +85,7 @@ DEBUG=True
 ALLOWED_HOSTS=
 
 # Database
-DATABASE_NAME=jodhpur_pg_db
+DATABASE_NAME=marvar_pg_db
 DATABASE_USER=postgres
 DATABASE_PASSWORD=your-password
 DATABASE_HOST=localhost
@@ -108,7 +108,7 @@ JWT_REFRESH_TOKEN_LIFETIME=1440
 #### Setup Database
 ```bash
 # Create PostgreSQL database
-createdb jodhpur_pg_db
+createdb marvar_pg_db
 
 # Run migrations
 python manage.py migrate
@@ -147,7 +147,7 @@ Frontend will run on `http://localhost:3000`
 ## 📁 Project Structure
 
 ```
-jodhpur-boys-pg/
+marvar-boys-pg/
 ├── backend/
 │   ├── config/              # Django settings
 │   ├── users/               # User management app
@@ -276,7 +276,7 @@ This project is licensed under the MIT License.
 
 ## 👨‍💻 Developer
 
-Developed with ❤️ for Jodhpur Boys PG
+Developed with ❤️ for Marvar Boys PG
 
 ## 📞 Support
 
